@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>5.로그인 처리</title>
+    <script>
+        //값 입력
+        var userID=window.prompt("사용자 아이디는?")
+        var userPW=window.prompt("사용자 패스워드는?");
+        //값 비교
+        if(userID=="dojun"&&userPW=="1234")
+            alert("도전님 환영합니다.");
+/*
+        else if(userID !="dojun")
+            alert("사용자 아이디가 잘못되었습니다.");
+        else
+            alert("패스워드가 잘못 입력 되었습니다.");
+*/
+        else if(userID == "dojun")
+            alert("패스워드가 잘못 입력 되었습니다.");
+        else
+            alert("사용자 아이디가 잘못되었습니다.");
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
