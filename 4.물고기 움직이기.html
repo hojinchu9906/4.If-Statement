@@ -14,21 +14,13 @@
         }
         #panel {
             width: 600px;
-            height: 300px;
+            height: 400px;
             border: 1px solid #999;
             position: relative;
         }
         #nav {
             text-align: center;
             width: 600px;
-        }
-        #bar {
-            position: absolute;
-            left: 50px;
-            top:190px;
-            width: 500px;
-            height: 20px;
-            background: #F30;
         }
 
     </style>
@@ -49,16 +41,20 @@
             //var $divs=$("div");
             $("#btnStart").click(function(){
                 //값 입력
-                var value=window.prompt("x좌표 값 입력해주세요.",0);
+                var x=parseInt($("#inputX").val());
+                var y=parseInt($("#inputY").val());
                 //문자=>숫자 명시적 형변환
-                value=parseInt(value);
+
                 //비교
-                if(value>=0 && value<=480){
-                    $fish.css("left",value);
-                } else if(value<0){
-                    alert("0보다 큰 값을 입력해 주세요.");
-                } else {
-                    alert("480보다 작은 값을 입력해 주세요.");
+                if((x>=0 && x<=500) && y>=0 && y<=290){
+                    $fish.css({
+                       left: x,
+                       top: y
+                    });
+                } else{
+                    alert("입력된 값이 너무 큽니다. 다시 입력해 주세요.");
+                    var x=parseInt($("#inputX").val(""));
+                    var y=parseInt($("#inputY").val(""));
                 }
             });
         });
@@ -66,11 +62,14 @@
 </head>
 <body>
     <div id="panel">
-        <div id="bar"></div>
         <img src="fish.png" id="fish">
     </div>
 
     <div id="nav">
+        <label>x값 입력 : </label>
+        <input id="inputX">
+        <label>y값 입력 : </label>
+        <input id="inputY">
         <button id="btnStart">
             물고기 움직이기
         </button>
