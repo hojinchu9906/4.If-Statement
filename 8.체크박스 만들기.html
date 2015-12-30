@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>8.체크박스 만들기</title>
+    <style>
+        body {
+            font-size: 12pt;
+        }
+        .d_checkbox{
+            position: relative;
+            left: 100px;
+            top: 100px;
+        }
+        .d_checkbox .checkbox{
+            width: 20px;
+            height: 15px;
+            float: left;
+            background: url("resources/checkbox_checked.png") no-repeat;
+        }
+        .d_checkbox .checkbox.check{
+            background: url("resources/checkbox_unchecked.gif") no-repeat;
+        }
+    </style>
+    <script src="libs/jquery-1.11.3.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            var bCheck=false;
+            var $chk=$(".d_checkbox .checkbox");
+            $(".d_checkbox").click(function(){
+                bCheck=!bCheck;
+                if(bCheck==true){
+                    $chk.addClass("check");
+                } else{
+                    $chk.removeClass("check");
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="d_checkbox">
+        <div class="checkbox"></div>
+        <div class="label">
+            체크박스-여기를 클릭해 보세요.
+        </div>
+    </div>
+</body>
+</html>
